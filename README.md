@@ -7,12 +7,13 @@
 
 ## Prepare
 
-SwiftLint for TODO lists
+1. Setup SwiftLint for TODO lists
 ```
 brew install swiftlint
 ```
-
 ![Demo](https://github.com/khoitruongminh/RxWorkshop/blob/master/swiftlint.png?raw=true)
+
+2. You can complete **Step 1** at home
 
 ## Work plan
 
