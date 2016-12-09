@@ -1,4 +1,5 @@
 # RxWorkshop
+Learn RxSwift by making App to search GitHub repositories
 
 ## Demo
 ![Demo](https://github.com/khoitruongminh/RxWorkshop/blob/master/demo.gif?raw=true)
