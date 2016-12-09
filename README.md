@@ -32,3 +32,9 @@ Step 6 - Subscription: listen to the changes and do things
 Step 7 - More operators: `flatMapLatest` and `combineLatest`
 
 Step 8 - Replace the mock with real network requests
+
+## How to
+
+- Check out `RxWorkshop` repo before starting each **step**
+- After resolving each step, check out repo again to get the solution
+ 
