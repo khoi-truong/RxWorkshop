@@ -1,0 +1,6 @@
+framework module Pods_RxWorkshop {
+  umbrella header "Pods-RxWorkshop-umbrella.h"
+
+  export *
+  module * { export * }
+}
