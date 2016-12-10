@@ -29,20 +29,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let searchText = searchBar.rx.text.orEmpty
+        searchBar.rx.text.orEmpty
+            .map { "Searching for: " + $0.uppercased() }
+            .bindTo(descriptionLabel.rx.text)
+            .addDisposableTo(disposeBag)
 
-        let binding = searchText.map { "Searching for: " + $0.uppercased() }.bindTo(descriptionLabel.rx.text)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            // Release all the resources allocated to compute the upcoming `searchText` elements
-            binding.dispose()
-        })
-
-        // When a DisposeBag is deallocated, it will call dispose on each of the added disposables
-        binding.addDisposableTo(disposeBag)
-
-        // TODO: Add all the UI binding to disposeBag
-        viewModel.results.bindTo(resultLabel.rx.text)
+        viewModel.results
+            .bindTo(resultLabel.rx.text)
+            .addDisposableTo(disposeBag)
     }
 
 }
