@@ -7,14 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		85FDD70C938BF6784FBE4588 /* Pods_Assignment1_TranDucTan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBC8EB89764DEA4CED1FD /* Pods_Assignment1_TranDucTan.framework */; };
 		FC07EFDE1DFD74000064DDDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC07EFDD1DFD74000064DDDB /* AppDelegate.swift */; };
 		FC07EFE01DFD74000064DDDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC07EFDF1DFD74000064DDDB /* ViewController.swift */; };
 		FC07EFE31DFD74000064DDDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC07EFE11DFD74000064DDDB /* Main.storyboard */; };
 		FC07EFE51DFD74000064DDDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC07EFE41DFD74000064DDDB /* Assets.xcassets */; };
 		FC07EFE81DFD74000064DDDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC07EFE61DFD74000064DDDB /* LaunchScreen.storyboard */; };
+		FCF5F05E1DFD848E000A7913 /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5F05D1DFD848E000A7913 /* GitHubRepository.swift */; };
+		FCF5F0601DFD84C4000A7913 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5F05F1DFD84C4000A7913 /* GitHubAPI.swift */; };
+		FCF5F0621DFD8D33000A7913 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF5F0611DFD8D33000A7913 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D20E8394CEFFEEADCCA26E3 /* Pods-Assignment1_TranDucTan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment1_TranDucTan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment1_TranDucTan/Pods-Assignment1_TranDucTan.release.xcconfig"; sourceTree = "<group>"; };
+		6D6BBC8EB89764DEA4CED1FD /* Pods_Assignment1_TranDucTan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assignment1_TranDucTan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCCC45050B6EE06DC42805FC /* Pods-Assignment1_TranDucTan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assignment1_TranDucTan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assignment1_TranDucTan/Pods-Assignment1_TranDucTan.debug.xcconfig"; sourceTree = "<group>"; };
 		FC07EFDA1DFD74000064DDDB /* Assignment1_TranDucTan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment1_TranDucTan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC07EFDD1DFD74000064DDDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC07EFDF1DFD74000064DDDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +29,9 @@
 		FC07EFE41DFD74000064DDDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC07EFE71DFD74000064DDDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC07EFE91DFD74000064DDDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF5F05D1DFD848E000A7913 /* GitHubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		FCF5F05F1DFD84C4000A7913 /* GitHubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		FCF5F0611DFD8D33000A7913 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85FDD70C938BF6784FBE4588 /* Pods_Assignment1_TranDucTan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BD96FAE2098180B3D3382CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCCC45050B6EE06DC42805FC /* Pods-Assignment1_TranDucTan.debug.xcconfig */,
+				1D20E8394CEFFEEADCCA26E3 /* Pods-Assignment1_TranDucTan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C5DD7094125735060EF1A74D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D6BBC8EB89764DEA4CED1FD /* Pods_Assignment1_TranDucTan.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FC07EFD11DFD74000064DDDB = {
 			isa = PBXGroup;
 			children = (
 				FC07EFDC1DFD74000064DDDB /* Assignment1_TranDucTan */,
 				FC07EFDB1DFD74000064DDDB /* Products */,
+				1BD96FAE2098180B3D3382CE /* Pods */,
+				C5DD7094125735060EF1A74D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +86,9 @@
 			children = (
 				FC07EFDD1DFD74000064DDDB /* AppDelegate.swift */,
 				FC07EFDF1DFD74000064DDDB /* ViewController.swift */,
+				FCF5F0611DFD8D33000A7913 /* DataSource.swift */,
+				FCF5F05D1DFD848E000A7913 /* GitHubRepository.swift */,
+				FCF5F05F1DFD84C4000A7913 /* GitHubAPI.swift */,
 				FC07EFE11DFD74000064DDDB /* Main.storyboard */,
 				FC07EFE41DFD74000064DDDB /* Assets.xcassets */,
 				FC07EFE61DFD74000064DDDB /* LaunchScreen.storyboard */,
@@ -71,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC07EFEC1DFD74000064DDDB /* Build configuration list for PBXNativeTarget "Assignment1_TranDucTan" */;
 			buildPhases = (
+				EAF8CE29B7E4C589FD0A8165 /* [CP] Check Pods Manifest.lock */,
 				FC07EFD61DFD74000064DDDB /* Sources */,
 				FC07EFD71DFD74000064DDDB /* Frameworks */,
 				FC07EFD81DFD74000064DDDB /* Resources */,
+				1639A5CF0A902F55C9E17632 /* [CP] Embed Pods Frameworks */,
+				FE71686C9FA9AC6234E7E54F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -132,13 +168,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1639A5CF0A902F55C9E17632 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment1_TranDucTan/Pods-Assignment1_TranDucTan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAF8CE29B7E4C589FD0A8165 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE71686C9FA9AC6234E7E54F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Assignment1_TranDucTan/Pods-Assignment1_TranDucTan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FC07EFD61DFD74000064DDDB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF5F05E1DFD848E000A7913 /* GitHubRepository.swift in Sources */,
 				FC07EFE01DFD74000064DDDB /* ViewController.swift in Sources */,
 				FC07EFDE1DFD74000064DDDB /* AppDelegate.swift in Sources */,
+				FCF5F0621DFD8D33000A7913 /* DataSource.swift in Sources */,
+				FCF5F0601DFD84C4000A7913 /* GitHubAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +269,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +319,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -257,7 +346,9 @@
 		};
 		FC07EFED1DFD74000064DDDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCCC45050B6EE06DC42805FC /* Pods-Assignment1_TranDucTan.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9B9A8JD2BS;
 				INFOPLIST_FILE = Assignment1_TranDucTan/Info.plist;
@@ -270,7 +361,9 @@
 		};
 		FC07EFEE1DFD74000064DDDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D20E8394CEFFEEADCCA26E3 /* Pods-Assignment1_TranDucTan.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9B9A8JD2BS;
 				INFOPLIST_FILE = Assignment1_TranDucTan/Info.plist;
@@ -300,6 +393,7 @@
 				FC07EFEE1DFD74000064DDDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
