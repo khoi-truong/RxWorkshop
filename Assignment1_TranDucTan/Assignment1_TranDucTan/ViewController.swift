@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchDescription: UILabel!
     @IBOutlet weak var searchResultTable: UITableView!
     
-    var reposData = [RepositoryData]()
-    var resultSections = [SectionOfRepositoryData]()
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -43,18 +41,18 @@ class ViewController: UIViewController {
             .combineLatest(searchRepo, searchStar, resultSelector: { ($0, $1) })
             .flatMapLatest(fromQueryAndStarsToSearchResults)
         
+        searchStar
+            .map({ String($0) + " ⭐️" })
+            .bindTo(starLabel.rx.text)
+            .addDisposableTo(disposeBag)
+        
         searchQuery
             .map(fromSearchResultsToSearchDescription)
             .observeOn(MainScheduler.instance)
             .bindTo(searchDescription.rx.text)
             .addDisposableTo(disposeBag)
         
-        searchStar
-            .map({ String($0) + " ⭐️" })
-            .bindTo(starLabel.rx.text)
-            .addDisposableTo(disposeBag)
-        
-        
+        //UITableView Binding using RxDataSources
         let resultDataSource = RxTableViewSectionedReloadDataSource<SectionOfRepositoryData>()
         resultDataSource.configureCell = { dataSource, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -82,12 +80,6 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
 
