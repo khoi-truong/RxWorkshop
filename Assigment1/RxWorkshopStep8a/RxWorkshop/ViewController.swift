@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 protocol ViewModelType {
 
@@ -19,7 +20,6 @@ protocol ViewModelType {
     var results: Observable<String> { get }
 
     var showEasterEggAlert: Observable<Void> { get }
-
 }
 
 class ViewController: UIViewController {
