@@ -17,20 +17,34 @@ protocol ViewModelType {
     var minimumStars: Variable<Int> { get }
 
     var searchDescription: Observable<String> { get }
-    var results: Observable<String> { get }
+    var results: Observable<[SectionOfCustomData]> { get }
 
     var showEasterEggAlert: Observable<Void> { get }
 }
+
+struct SectionOfCustomData {
+    var header: String
+    var items: [Item]
+}
+extension SectionOfCustomData: SectionModelType {
+    typealias Item = Repository
+    
+    init(original: SectionOfCustomData, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
+
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var starSlider: UISlider!
     @IBOutlet weak var starLabel: UILabel!
-
+    @IBOutlet weak var tbView: UITableView!
+    
     let viewModel: ViewModelType = ViewModel()
     private let disposeBag = DisposeBag()
 
@@ -55,19 +69,29 @@ class ViewController: UIViewController {
             .bindTo(starLabel.rx.text)
             .addDisposableTo(disposeBag)
 
-        viewModel.searchDescription
-            .bindTo(descriptionLabel.rx.text)
-            .addDisposableTo(disposeBag)
-
-        viewModel.results
-            .bindTo(resultLabel.rx.text)
-            .addDisposableTo(disposeBag)
-
         viewModel.showEasterEggAlert
             .subscribe(onNext: { [weak self] in
                 self?.showEasterEggAlert()
             })
             .addDisposableTo(disposeBag)
+        
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>()
+        
+        dataSource.configureCell = { ds, tv, ip, item in
+            let cell = tv.dequeueReusableCell(withIdentifier: "Cell", for: ip)
+            cell.textLabel?.text = "\(ip.row + 1): \(item.name) with \(item.starCount) 🌟"
+            cell.detailTextLabel?.text = item.description
+            return cell
+        }
+        dataSource.titleForHeaderInSection = { ds, index in
+            return ds.sectionModels[index].header
+        }
+        
+        viewModel.results
+            .bindTo(tbView.rx.items(dataSource: dataSource))
+            .addDisposableTo(disposeBag)
+
+        searchBar.rx.searchButtonClicked.subscribe({_ in self.searchBar.resignFirstResponder()}).addDisposableTo(disposeBag)
     }
 
     private func showEasterEggAlert() {
@@ -81,4 +105,38 @@ class ViewController: UIViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

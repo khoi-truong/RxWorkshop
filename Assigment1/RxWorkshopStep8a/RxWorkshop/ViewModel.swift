@@ -14,8 +14,9 @@ struct ViewModel: ViewModelType {
 
     let query: Variable<String> = Variable<String>("")
     let minimumStars: Variable<Int> = Variable<Int>(0)
+    
     let searchDescription: Observable<String>
-    let results: Observable<String>
+    let results: Observable<[SectionOfCustomData]>
     let showEasterEggAlert: Observable<Void>
 
     init() {
@@ -34,11 +35,9 @@ struct ViewModel: ViewModelType {
         searchDescription = searchResults
             .map(fromSearchResultsToSearchDescription)
             .observeOn(MainScheduler.instance)
-
-        results = searchResults
-            .map { $0.0 }
-            .map(fromRepositoriesToString)
-            .observeOn(MainScheduler.instance)
+        
+        results = searchResults.observeOn(MainScheduler.instance)
+            .map { [SectionOfCustomData(header: "", items: $0.0)] }
 
         showEasterEggAlert = query.asObservable()
             .filter { $0.lowercased() == "rxswift" }
